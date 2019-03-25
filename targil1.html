@@ -1,0 +1,22 @@
+<html>
+        <head>
+                <title>I Love HTML</title>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        </head>
+        <body>
+                <hr>
+                <input type="number" id="num">
+                <button onclick="atzeret()">Calc Atzeret</button>
+                </body>
+        <script>
+                function atzeret() {
+                        var number = parseInt($("#num").val())
+                        var atz = 1
+                        for (var i = 2; i <= number; i++) {
+                                atz = atz * i
+                        }
+                        alert(atz)
+
+                }                                                      
+        </script>
+</html>
