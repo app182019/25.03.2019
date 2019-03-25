@@ -1,0 +1,100 @@
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  </body>
+</html>
+
+<!doctype html>
+<html lang="en">
+    <head>
+         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    </head>
+    <body><br>
+        <button onclick="add()">Click Me!</button>
+        <hr>
+        <table border="1" class="table">
+            <tr style="background: cornflowerblue">
+                <th>Array 1</th>
+                <th>Array 2</th>
+                <th>1 won</th>
+                <th>2 won</th>
+            </tr>
+            <tbody id="body1">               
+
+            </tbody>
+        </table>
+
+<script>
+function add() {
+
+  $("#body1").empty()
+  var size = Math.floor(Math.random() * 11) + 10 // 10-20
+  var arr1 = []
+  var arr2 = []
+
+  for(var i = 0; i < size; i++)
+    {
+        var number1 = Math.floor(Math.random() * 201) - 100 // -100 to +100
+        arr1.push(number1)
+      
+        var number2 = Math.floor(Math.random() * 201) - 100 // -100 to +100
+        arr2.push(number2)    
+    }
+
+  var mone1 = 0
+  var mone2 = 0
+
+  for(var i = 0; i < size; i++)
+    {
+      if (arr1[i] > arr2[i])
+        {
+          mone1++
+          $("#body1").append(`<tr><td>${arr1[i]}</td><td>${arr2[i]}</td><td>1</td><td>0</td></tr>`)
+        }
+      else if (arr2[i] > arr1[i])
+        {
+          mone2++
+          $("#body1").append(`<tr><td>${arr1[i]}</td><td>${arr2[i]}</td><td>0</td><td>1</td></tr>`)
+        }
+      else
+      {
+        // tie
+      }
+    }
+
+  if (mone1 > mone2){
+    console.log("arr1 won!")
+    $("#body1").append(`<tr><td></td><td></td><td><b>${mone1} -- won!</td><td><b>${mone2}</td></tr>`)
+  }
+  else if (mone2 > mone1){
+    console.log("arr2 won!")
+    $("#body1").append(`<tr><b><td></td><td></td><td><b>${mone1} </td><td><b>${mone2} -- won!</td></tr>`)
+  }
+  else  {
+      console.log("tie!")
+      $("#body1").append(`<tr><b><td></td><td></td><td><b>${mone1} -- Tie</td><td><b>${mone2} -- Tie</td></tr>`)
+    }
+    
+
+
+    
+}
+
+function addRow(p) {
+    
+}
+
+</script
+
+    </body>
+
+</html>    
